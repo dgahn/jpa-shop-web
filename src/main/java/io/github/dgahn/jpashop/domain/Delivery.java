@@ -9,20 +9,23 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 
 @Entity
-@Getter @Setter
+@Getter
+@Setter
 public class Delivery {
 
-  @Id @GeneratedValue
+  @Id
+  @GeneratedValue
   @Column(name = "delivery_id")
   private Long id;
 
-  @OneToOne(mappedBy = "delivery")
+  @OneToOne(mappedBy = "delivery", fetch = FetchType.LAZY)
   private Order order;
 
   @Embedded
