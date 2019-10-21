@@ -8,6 +8,7 @@ import io.github.dgahn.jpashop.domain.item.Item;
 import io.github.dgahn.jpashop.repository.ItemRepository;
 import io.github.dgahn.jpashop.repository.MemberRepository;
 import io.github.dgahn.jpashop.repository.OrderRepository;
+import io.github.dgahn.jpashop.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -59,4 +60,8 @@ public class OrderService {
   }
 
   // 검색
+  public List<Order> findOrders(final OrderSearch orderSearch) {
+    return orderRepository.findAll(orderSearch);
+  }
+
 }

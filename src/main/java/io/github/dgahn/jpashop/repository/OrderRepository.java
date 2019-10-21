@@ -29,8 +29,8 @@ public class OrderRepository {
         " AND m.name like :name", Order.class)
              .setParameter("status", orderSearch.getOrderStatus())
              .setParameter("name", orderSearch.getMemberName())
-             .setFirstResult(100)
-             .setMaxResults(200)
+//             .setFirstResult(0)
+//             .setMaxResults(200)
              .getResultList();
   }
 

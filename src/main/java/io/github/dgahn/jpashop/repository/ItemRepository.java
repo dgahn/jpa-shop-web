@@ -16,7 +16,7 @@ public class ItemRepository {
   private final EntityManager em;
 
   public void save(Item item) {
-    if (item.getId() != null) { //  item_id가 null일 경우 신규
+    if (item.getId() == null) { //  item_id가 null일 경우 신규
       em.persist(item);
     } else { // update와 비슷함.
       em.merge(item);
